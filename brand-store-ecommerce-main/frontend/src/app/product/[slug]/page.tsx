@@ -457,7 +457,7 @@ export default function ProductDetailPage({
               You Might Also Like
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
-              {SAMPLE_PRODUCTS.filter((p) => p.id !== product.id)
+              {relatedProducts.filter((p) => p.id !== product.id)
                 .slice(0, 4)
                 .map((p, i) => (
                   <ProductCard key={p.id} product={p} index={i} />
