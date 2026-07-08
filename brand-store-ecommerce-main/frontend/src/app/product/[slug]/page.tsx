@@ -98,7 +98,7 @@ export default function ProductDetailPage({
 
   // Auto-select first options if not selected
   if (!selectedSize && product.sizes.length > 0)
-    setSelectedSize(product.sizes[0]);
+    setSelectedSize(product.sizes[0].size);
   if (!selectedColor && product.colors.length > 0)
     setSelectedColor(product.colors[0].name);
 
