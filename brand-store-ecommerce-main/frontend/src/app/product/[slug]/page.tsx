@@ -322,7 +322,7 @@ export default function ProductDetailPage({
                       onClick={() => setSelectedSize(size.size)}
                       className={cn(
                         "h-12 rounded-xl text-sm font-semibold border transition-all",
-                        selectedSize === size
+                        selectedSize === size.size
                           ? "bg-foreground text-background border-foreground shadow-md"
                           : "border-border hover:border-foreground/30 hover:bg-accent",
                       )}
