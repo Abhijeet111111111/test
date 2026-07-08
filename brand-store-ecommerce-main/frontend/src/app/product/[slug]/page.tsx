@@ -112,7 +112,7 @@ export default function ProductDetailPage({
         id: "", // Will be generated in slice
         productId: product.id,
         name: product.name,
-        brand: product.brand,
+        brand: product.brand.name,
         image: product.images[0],
         price: product.price,
         compareAtPrice: product.compareAtPrice,
