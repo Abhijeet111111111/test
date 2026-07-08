@@ -91,7 +91,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         {/* Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-muted-foreground/10 to-muted-foreground/20" />
         <Image
-          src={product.image || (product.images && product.images[0])}
+          src={product.images && product.images[0]}
           alt={product.name}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
