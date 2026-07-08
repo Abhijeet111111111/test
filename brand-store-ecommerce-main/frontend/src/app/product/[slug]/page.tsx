@@ -193,13 +193,13 @@ export default function ProductDetailPage({
 
               {/* Main Image */}
               <div className="relative flex-1 aspect-[4/5] bg-muted rounded-3xl overflow-hidden">
-                <div className="absolute top-4 left-4 z-10">
-                  {product.badge && (
+                {/* <div className="absolute top-4 left-4 z-10"> */}
+                  /* {product.badge && (
                     <span className="px-3 py-1.5 text-xs font-bold tracking-wider uppercase rounded-full bg-foreground text-background">
                       {product.badge}
                     </span>
-                  )}
-                </div>
+                  )} */
+                {/* </div> */}
                 <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
                   <button
                     onClick={handleWishlist}
