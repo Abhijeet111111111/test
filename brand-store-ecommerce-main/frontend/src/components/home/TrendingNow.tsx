@@ -10,22 +10,7 @@ import { toggleWishlistItem } from "@/store/slices/wishlistSlice";
 import { cn, formatPrice, getDiscountPercentage } from "@/lib/utils";
 import { toast } from "sonner";
 import Image from "next/image";
-
-export interface Product {
-  id: string;
-  name: string;
-  slug: string;
-  brand: string;
-  category: string;
-  price: number;
-  compareAtPrice: number;
-  rating: number;
-  numReviews: number;
-  image: string;
-  badge?: string;
-  colors: readonly string[] | string[];
-  sizes: readonly string[] | string[];
-}
+import { Product } from "@/lib/types";
 
 interface ProductCardProps {
   product: Product;
