@@ -1,0 +1,271 @@
+// Brand Store - Static Data & Constants
+
+export const SITE_CONFIG = {
+  name: 'Brand Store',
+  description: 'Premium footwear from the world\'s top brands. Curated, authenticated, delivered.',
+  url: 'https://brandstore.com',
+  ogImage: '/og-image.jpg',
+  copyright: `© ${new Date().getFullYear()} Brand Store. All rights reserved.`,
+};
+
+export const NAV_LINKS = [
+  { label: 'Home', href: '/' },
+  { label: 'Shop', href: '/shop' },
+  { label: 'Sneakers', href: '/category/sneakers' },
+  { label: 'Sports', href: '/category/sports-shoes' },
+  { label: 'Boots', href: '/category/boots' },
+  { label: 'Formal', href: '/category/formal-shoes' },
+] as const;
+
+export const CATEGORIES = [
+  {
+    name: 'Sneakers',
+    slug: 'sneakers',
+    image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=600&auto=format&fit=crop',
+    brands: ['U.S. Polo Assn.', 'Bugatti', 'Furo', 'Camel Active'],
+  },
+  {
+    name: 'Sports',
+    slug: 'sports-shoes',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop',
+    brands: ['Adidas', 'New Balance', 'Reebok', 'Furo'],
+  },
+  {
+    name: 'Loafers',
+    slug: 'loafers',
+    image: 'https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?q=80&w=600&auto=format&fit=crop',
+    brands: ['ID'],
+  },
+  {
+    name: 'Boots',
+    slug: 'boots',
+    image: 'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?q=80&w=600&auto=format&fit=crop',
+    brands: ['Wrangler'],
+    colors: ['Grey', 'Brown', 'Green', 'Tan'],
+  },
+  {
+    name: 'Chelsea Boots',
+    slug: 'chelsea-boots',
+    image: 'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?q=80&w=600&auto=format&fit=crop',
+    brands: ['Zara', 'Henderson', 'Prada', 'Cole Haan'],
+  },
+  {
+    name: 'Formal',
+    slug: 'formal-shoes',
+    image: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=600&auto=format&fit=crop',
+    brands: ['H&M', 'Eram', 'Red Chief', 'Zara', 'Espirit', 'ID', 'Woodland'],
+  },
+] as const;
+
+export const BRANDS = [
+  { name: 'Adidas', slug: 'adidas' },
+  { name: 'New Balance', slug: 'new-balance' },
+  { name: 'Reebok', slug: 'reebok' },
+  { name: 'Woodland', slug: 'woodland' },
+  { name: 'Red Chief', slug: 'red-chief' },
+  { name: 'Wrangler', slug: 'wrangler' },
+  { name: 'Camel Active', slug: 'camel-active' },
+  { name: 'Bugatti', slug: 'bugatti' },
+  { name: 'Prada', slug: 'prada' },
+  { name: 'Cole Haan', slug: 'cole-haan' },
+  { name: 'Zara', slug: 'zara' },
+  { name: 'U.S. Polo Assn.', slug: 'us-polo-assn' },
+  { name: 'Furo', slug: 'furo' },
+  { name: 'ID', slug: 'id' },
+  { name: 'Eram', slug: 'eram' },
+  { name: 'H&M', slug: 'h-and-m' },
+] as const;
+
+export const TRUST_BADGES = [
+  { icon: 'Truck', label: 'Free shipping over $150' },
+  { icon: 'ShieldCheck', label: '100% authentic' },
+  { icon: 'RotateCcw', label: '30-day returns' },
+  { icon: 'Sparkles', label: 'New drops weekly' },
+] as const;
+
+export const SHOE_SIZES = ['6', '7', '8', '9', '10', '11', '12', '13'] as const;
+
+export const SHOE_COLORS = [
+  { name: 'Black', hex: '#000000' },
+  { name: 'White', hex: '#FFFFFF' },
+  { name: 'Grey', hex: '#808080' },
+  { name: 'Brown', hex: '#8B4513' },
+  { name: 'Navy', hex: '#000080' },
+  { name: 'Red', hex: '#E63946' },
+  { name: 'Green', hex: '#2D5016' },
+  { name: 'Tan', hex: '#D2B48C' },
+] as const;
+
+export const SORT_OPTIONS = [
+  { label: 'Newest', value: '-createdAt' },
+  { label: 'Price: Low to High', value: 'price' },
+  { label: 'Price: High to Low', value: '-price' },
+  { label: 'Best Selling', value: '-numReviews' },
+  { label: 'Highest Rated', value: '-rating' },
+] as const;
+
+// Sample products for demo/static rendering
+export const SAMPLE_PRODUCTS = [
+  {
+    id: '1',
+    name: 'Aster Low Leather',
+    slug: 'aster-low-leather',
+    brand: 'U.S. Polo Assn.',
+    category: 'Sneakers',
+    price: 10499,
+    compareAtPrice: 13999,
+    rating: 4.7,
+    numReviews: 218,
+    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=600&auto=format&fit=crop',
+    badge: 'BESTSELLER',
+    colors: ['White', 'Black'],
+    sizes: ['7', '8', '9', '10', '11'],
+  },
+  {
+    id: '2',
+    name: 'Kinetic Runner',
+    slug: 'kinetic-runner',
+    brand: 'Adidas',
+    category: 'Sports Shoes',
+    price: 11999,
+    compareAtPrice: 0,
+    rating: 4.8,
+    numReviews: 512,
+    image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=600&auto=format&fit=crop',
+    badge: 'NEW',
+    colors: ['Black', 'White', 'Grey'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+  },
+  {
+    id: '3',
+    name: 'Monarch Chelsea',
+    slug: 'monarch-chelsea',
+    brand: 'Cole Haan',
+    category: 'Chelsea Boots',
+    price: 17499,
+    compareAtPrice: 20999,
+    rating: 4.9,
+    numReviews: 176,
+    image: 'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?q=80&w=600&auto=format&fit=crop',
+    badge: 'SALE',
+    colors: ['Tan', 'Brown', 'Black'],
+    sizes: ['8', '9', '10', '11'],
+  },
+  {
+    id: '4',
+    name: 'Oxford Noir Cap-Toe',
+    slug: 'oxford-noir-cap-toe',
+    brand: 'Prada',
+    category: 'Formal Shoes',
+    price: 31499,
+    compareAtPrice: 0,
+    rating: 4.9,
+    numReviews: 92,
+    image: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=600&auto=format&fit=crop',
+    badge: '',
+    colors: ['Black'],
+    sizes: ['8', '9', '10', '11'],
+  },
+  {
+    id: '5',
+    name: 'Trail Blazer GTX',
+    slug: 'trail-blazer-gtx',
+    brand: 'Woodland',
+    category: 'Boots',
+    price: 14999,
+    compareAtPrice: 18499,
+    rating: 4.6,
+    numReviews: 342,
+    image: 'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?q=80&w=600&auto=format&fit=crop',
+    badge: 'SALE',
+    colors: ['Brown', 'Green', 'Grey'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+  },
+  {
+    id: '6',
+    name: 'Classic Penny Loafer',
+    slug: 'classic-penny-loafer',
+    brand: 'ID',
+    category: 'Loafers',
+    price: 12499,
+    compareAtPrice: 0,
+    rating: 4.5,
+    numReviews: 89,
+    image: 'https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?q=80&w=600&auto=format&fit=crop',
+    badge: 'NEW',
+    colors: ['Brown', 'Black', 'Tan'],
+    sizes: ['8', '9', '10', '11'],
+  },
+  {
+    id: '7',
+    name: 'Fresh Foam X',
+    slug: 'fresh-foam-x',
+    brand: 'New Balance',
+    category: 'Sports Shoes',
+    price: 13499,
+    compareAtPrice: 15999,
+    rating: 4.7,
+    numReviews: 428,
+    image: 'https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=600&auto=format&fit=crop',
+    badge: 'BESTSELLER',
+    colors: ['Grey', 'White', 'Navy'],
+    sizes: ['7', '8', '9', '10', '11', '12', '13'],
+  },
+  {
+    id: '8',
+    name: 'Urban Street Low',
+    slug: 'urban-street-low',
+    brand: 'Bugatti',
+    category: 'Sneakers',
+    price: 14499,
+    compareAtPrice: 0,
+    rating: 4.6,
+    numReviews: 156,
+    image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=600&auto=format&fit=crop',
+    badge: '',
+    colors: ['Grey', 'White', 'Black'],
+    sizes: ['7', '8', '9', '10', '11'],
+  },
+] as const;
+
+export const CUSTOMER_REVIEWS = [
+  {
+    id: 1,
+    name: 'Ananya S.',
+    rating: 5,
+    comment: 'The most comfortable pair I own. Fit was true to size and delivery was overnight.',
+    brand: 'Cole Haan',
+    verified: true,
+  },
+  {
+    id: 2,
+    name: 'Marcus T.',
+    rating: 5,
+    comment: 'Feels like a $500 sneaker. The finish is impeccable and the box arrived in perfect shape.',
+    brand: 'Adidas',
+    verified: true,
+  },
+  {
+    id: 3,
+    name: 'Priya R.',
+    rating: 5,
+    comment: 'Third order this year. Brand Store has become my default for anything on my feet.',
+    brand: 'New Balance',
+    verified: true,
+  },
+] as const;
+
+export const FOOTER_LINKS = {
+  company: [
+    { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Careers', href: '#' },
+    { label: 'Press', href: '#' },
+  ],
+  support: [
+    { label: 'Help Center', href: '#' },
+    { label: 'Shipping', href: '#' },
+    { label: 'Returns', href: '#' },
+    { label: 'Size Guide', href: '#' },
+  ],
+} as const;
