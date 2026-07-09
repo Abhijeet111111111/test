@@ -47,3 +47,9 @@ export async function getRelatedProducts(
     .filter((p: Product) => p.id !== excludeId)
     .slice(0, limit);
 }
+
+export async function getAllProducts(): Promise<Product[]> {
+  const res = await api.get("/products");
+  const list = res.data.data ?? res.data;
+  return list.map(normalizeProduct);
+}
