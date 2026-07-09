@@ -26,12 +26,16 @@ export default function ShopPage() {
   const [gridCols, setGridCols] = useState<3 | 4>(4);
   const [filterOpen, setFilterOpen] = useState(false);
 
-  const allProducts = [...SAMPLE_PRODUCTS, ...SAMPLE_PRODUCTS.map((p, i) => ({
-    ...p,
-    id: `${p.id}-dup-${i}`,
-    name: `${p.name} V2`,
-    slug: `${p.slug}-v2`,
-  }))];
+ const [allProducts, setAllProducts] = useState<Product[] | null>([]);
+  console.log("SHOP PRODUCTS", allProducts);
+  useEffect(() => {
+    async function load() {
+      const p = await getAllProducts();
+      setAllProducts(p);
+    }
+    load();
+  }, []);
+
 
   const filteredProducts = useMemo(() => {
     let products = [...allProducts];
@@ -66,7 +70,7 @@ export default function ShopPage() {
     }
 
     return products;
-  }, [selectedBrands, selectedCategories, selectedSizes, priceRange, sortBy]);
+  }, [selectedBrands, selectedCategories, selectedSizes, priceRange, sortBy,allProducts]);
 
   const activeFilterCount = selectedBrands.length + selectedCategories.length + selectedSizes.length + selectedColors.length + (priceRange[0] > 0 || priceRange[1] < 50000 ? 1 : 0);
 
