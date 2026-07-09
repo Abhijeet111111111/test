@@ -18,6 +18,7 @@ import { Separator } from '@/components/ui/separator';
 import { Product } from "@/lib/types";
 import { getAllProducts } from "@/lib/products";
 
+
 export default function ShopPage() {
   const [sortBy, setSortBy] = useState('-createdAt');
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
@@ -27,6 +28,7 @@ export default function ShopPage() {
   const [priceRange, setPriceRange] = useState([0, 50000]);
   const [gridCols, setGridCols] = useState<3 | 4>(4);
   const [filterOpen, setFilterOpen] = useState(false);
+  const [isLoading,setIsLoading] = useState(true);
 
  const [allProducts, setAllProducts] = useState<Product[]>([]);
   console.log("SHOP PRODUCTS", allProducts);
@@ -34,6 +36,7 @@ export default function ShopPage() {
     async function load() {
       const p = await getAllProducts();
       setAllProducts(p);
+      setIsLoading(false);
     }
     load();
   }, []);
@@ -322,14 +325,22 @@ export default function ShopPage() {
               </div>
 
               {/* Product Grid */}
-              <div className={cn(
-                'grid gap-4 lg:gap-6',
-                gridCols === 3 ? 'grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 lg:grid-cols-4'
-              )}>
-                {filteredProducts.map((product, i) => (
-                  <ProductCard key={product.id} product={product} index={i} />
-                ))}
-              </div>
+              {!isLoading ? (
+                <div
+                  className={cn(
+                    "grid gap-4 lg:gap-6",
+                    gridCols === 3
+                      ? "grid-cols-2 lg:grid-cols-3"
+                      : "grid-cols-2 lg:grid-cols-4",
+                  )}
+                >
+                  {filteredProducts.map((product, i) => (
+                    <ProductCard key={product.id} product={product} index={i} />
+                  ))}
+                </div>
+              ) : (
+                <div className="pt-24 text-center">Loading...</div>
+              )}
 
               {filteredProducts.length === 0 && (
                 <div className="text-center py-20">
