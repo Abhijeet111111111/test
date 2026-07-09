@@ -46,11 +46,6 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
       >
         {/* Badges */}
         <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
-          {product.badge && (
-            <span className="px-2.5 py-1 text-[10px] font-bold tracking-wider uppercase rounded-full bg-foreground text-background">
-              {product.badge}
-            </span>
-          )}
           {discount > 0 && (
             <span className="px-2.5 py-1 text-[10px] font-bold tracking-wider uppercase rounded-full bg-[var(--brand-red)] text-white">
               {discount}% OFF
