@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation"; // Add useRouter here
 import {
   Search,
   Heart,
@@ -47,6 +47,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+  const router = useRouter(); // Add this line
   const { theme, setTheme } = useTheme();
   const dispatch = useDispatch();
   const cartCount = useSelector((state: RootState) => state.cart.totalItems);
@@ -245,62 +246,73 @@ export default function Navbar() {
                 <DropdownMenuContent align="end" className="w-48">
                   {isAuthenticated ? (
                     <>
-                      <div className="px-2 py-1.5 text-sm font-medium truncate">
-                        {user?.name}
+                      <div className="px-2 py-1.5 text-sm font-medium">
+                        <p className="truncate text-foreground">{user?.name}</p>
+                        <p className="truncate text-xs text-muted-foreground">
+                          {user?.email}
+                        </p>
                       </div>
                       <DropdownMenuSeparator />
+
+                      {/* Admin Dashboard Link */}
+                      {user?.role === "admin" && (
+                        <>
+                          <DropdownMenuItem
+                            onClick={() => router.push("/admin")}
+                            className="flex w-full cursor-pointer items-center"
+                          >
+                            <Settings className="mr-2 h-4 w-4" />
+                            Admin Dashboard
+                          </DropdownMenuItem>
+                          <DropdownMenuSeparator />
+                        </>
+                      )}
+
                       <DropdownMenuItem
-                        render={
-                          <Link
-                            href="/dashboard/orders"
-                            className="flex items-center gap-2"
-                          />
-                        }
+                        onClick={() => router.push("/profile")}
+                        className="flex w-full cursor-pointer items-center"
                       >
-                        <Package className="h-4 w-4" /> My Orders
+                        <User className="mr-2 h-4 w-4" />
+                        Profile
                       </DropdownMenuItem>
+
                       <DropdownMenuItem
-                        render={
-                          <Link
-                            href="/dashboard/addresses"
-                            className="flex items-center gap-2"
-                          />
-                        }
+                        onClick={() => router.push("/orders")}
+                        className="flex w-full cursor-pointer items-center"
                       >
-                        <MapPin className="h-4 w-4" /> Addresses
+                        <Package className="mr-2 h-4 w-4" />
+                        My Orders
                       </DropdownMenuItem>
-                      <DropdownMenuItem
-                        render={
-                          <Link
-                            href="/dashboard/profile"
-                            className="flex items-center gap-2"
-                          />
-                        }
-                      >
-                        <Settings className="h-4 w-4" /> Settings
-                      </DropdownMenuItem>
+
                       <DropdownMenuSeparator />
+
                       <DropdownMenuItem
-                        onClick={() => dispatch(logout())}
-                        className="flex items-center gap-2 text-[var(--brand-red)]"
+                        onClick={() => dispatchAuth(logout())}
+                        className="flex w-full cursor-pointer items-center text-[var(--brand-red)] focus:text-[var(--brand-red)]"
                       >
-                        <LogOut className="h-4 w-4" /> Log Out
+                        <LogOut className="mr-2 h-4 w-4" />
+                        Logout
                       </DropdownMenuItem>
                     </>
                   ) : (
-                    <DropdownMenuItem
-                      render={
-                        <Link
-                          href="/login"
-                          className="flex items-center gap-2"
-                        />
-                      }
-                    >
-                      <User className="h-4 w-4" /> Sign In
-                    </DropdownMenuItem>
+                    <>
+                      <DropdownMenuItem
+                        onClick={() => router.push("/login")}
+                        className="w-full cursor-pointer"
+                      >
+                        Login
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
+                        onClick={() => router.push("/register")}
+                        className="w-full cursor-pointer"
+                      >
+                        Register
+                      </DropdownMenuItem>
+                    </>
                   )}
                 </DropdownMenuContent>
               </DropdownMenu>
+
               {/* Mobile Menu */}
 
               <Sheet
