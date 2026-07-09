@@ -33,7 +33,7 @@ connectDB();
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: "https://test-one-phi-94.vercel.app" || 'http://localhost:3000',
+  origin: "https://test-one-phi-94.vercel.app",
   credentials: true,
 }));
 app.use(express.json({ limit: '10mb' }));
