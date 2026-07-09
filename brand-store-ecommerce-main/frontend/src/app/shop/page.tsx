@@ -342,7 +342,7 @@ export default function ShopPage() {
                 <div className="pt-24 text-center">Loading...</div>
               )}
 
-              {filteredProducts.length === 0 && !isLoading (
+              {filteredProducts.length === 0 && !isLoading && (
                 <div className="text-center py-20">
                   <p className="text-lg font-medium text-muted-foreground">No products found</p>
                   <p className="text-sm text-muted-foreground mt-1">Try adjusting your filters</p>
