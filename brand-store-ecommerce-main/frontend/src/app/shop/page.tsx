@@ -43,13 +43,13 @@ export default function ShopPage() {
     let products = [...allProducts];
 
     if (selectedBrands.length > 0) {
-      products = products.filter((p) => selectedBrands.includes(p.brand));
+      products = products.filter((p) => selectedBrands.includes(p.brand.name));
     }
     if (selectedCategories.length > 0) {
-      products = products.filter((p) => selectedCategories.includes(p.category));
+      products = products.filter((p) => selectedCategories.includes(p.category.name));
     }
     if (selectedSizes.length > 0) {
-      products = products.filter((p) => p.sizes.some((s) => selectedSizes.includes(s)));
+      products = products.filter((p) => p.sizes.some((s) => selectedSizes.includes(s.size)));
     }
     products = products.filter((p) => p.price >= priceRange[0] && p.price <= priceRange[1]);
 
