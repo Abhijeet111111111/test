@@ -16,6 +16,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Product } from "@/lib/types";
+import { getAllProducts } from "@/lib/products";
 
 export default function ShopPage() {
   const [sortBy, setSortBy] = useState('-createdAt');
