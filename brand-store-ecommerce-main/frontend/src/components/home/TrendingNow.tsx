@@ -128,7 +128,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 }
 
 export default function TrendingNow() {
-  const trendingProducts = SAMPLE_PRODUCTS.slice(0, 4);
+  
     const [trendingProducts, setTrendingProducts] = useState<Product[]>([]);
   useEffect(() => {
     async function load() {
