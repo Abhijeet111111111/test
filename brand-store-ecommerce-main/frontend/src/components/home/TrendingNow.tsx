@@ -11,6 +11,8 @@ import { cn, formatPrice, getDiscountPercentage } from "@/lib/utils";
 import { toast } from "sonner";
 import Image from "next/image";
 import { Product } from "@/lib/types";
+import { useState, useEffect } from "react";
+import { getAllProducts } from "@/lib/products";
 
 interface ProductCardProps {
   product: Product;
@@ -127,7 +129,14 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
 export default function TrendingNow() {
   const trendingProducts = SAMPLE_PRODUCTS.slice(0, 4);
-
+    const [trendingProducts, setTrendingProducts] = useState<Product[]>([]);
+  useEffect(() => {
+    async function load() {
+      const p = await getAllProducts();
+      setTrendingProducts(p);
+    }
+    load();
+  }, []);
   return (
     <section className="py-20 border-t">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
