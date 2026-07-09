@@ -4,10 +4,19 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { SAMPLE_PRODUCTS } from '@/constants';
 import { ProductCard } from './TrendingNow';
+import { useState, useEffect } from "react";
+import { getAllProducts } from "@/lib/products";
+import { Product } from "@/lib/types";
 
 export default function BestSellers() {
-  const bestSellers = SAMPLE_PRODUCTS.slice(4, 8);
-
+ const [bestSellers, setbestSellers] = useState<Product[]>([]);
+  useEffect(() => {
+    async function load() {
+      const p = await getAllProducts();
+      setbestSellers(p);
+    }
+    load();
+  }, []);
   return (
     <section className="py-20 bg-muted/30">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
