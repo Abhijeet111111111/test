@@ -28,7 +28,7 @@ export default function ShopPage() {
   const [gridCols, setGridCols] = useState<3 | 4>(4);
   const [filterOpen, setFilterOpen] = useState(false);
 
- const [allProducts, setAllProducts] = useState<Product[] | null>([]);
+ const [allProducts, setAllProducts] = useState<Product[]>([]);
   console.log("SHOP PRODUCTS", allProducts);
   useEffect(() => {
     async function load() {
