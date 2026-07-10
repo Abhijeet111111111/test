@@ -120,7 +120,7 @@ export default function OrdersTab() {
         </div>
         <Select
           value={statusFilter}
-          onValueChange={(v: OrderStatus | "all") => {
+          onValueChange={(v: any) => {
             setStatusFilter(v);
             setPage(1);
           }}
@@ -252,7 +252,7 @@ export default function OrdersTab() {
               <Label>Status</Label>
               <Select
                 value={statusValue}
-                onValueChange={(v: OrderStatus) => setStatusValue(v)}
+                onValueChange={(v: any) => setStatusValue(v)}
               >
                 <SelectTrigger>
                   <SelectValue />
