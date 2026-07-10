@@ -275,7 +275,7 @@ export default function CategoriesTab() {
               <Select
                 value={form.parentCategory}
                 onValueChange={(value) =>
-                  setForm((f) => ({ ...f, parentCategory: value }))
+                  setForm((f:any) => ({ ...f, parentCategory: value }))
                 }
               >
                 <SelectTrigger>
