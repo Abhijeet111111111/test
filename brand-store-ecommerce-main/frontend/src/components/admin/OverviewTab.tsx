@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Package, ShoppingBag, Users, IndianRupee } from "lucide-react";
 import { toast } from "sonner";
 import StatCard from "@/components/admin/StatCard";
-import { OrderStatusBadge } from "@/components/admin/StatusBadge";
+import { OrderStatusBadge } from "@/components/admin/Statusbadge";
 import { getDashboardStats } from "@/lib/admin-api";
 import { DashboardStats } from "@/types/admin";
 import { refName } from "@/types/admin";
