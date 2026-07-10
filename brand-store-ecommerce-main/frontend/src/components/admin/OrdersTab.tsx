@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { OrderStatusBadge } from "@/components/admin/StatusBadge";
+import { OrderStatusBadge } from "@/components/admin/Statusbadge";
 import { listOrders, updateOrder } from "@/lib/admin-api";
 import { Order, OrderStatus, Pagination, refName } from "@/types/admin";
 
