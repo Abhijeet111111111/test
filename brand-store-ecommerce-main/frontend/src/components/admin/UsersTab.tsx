@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ShieldCheck, Mail, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
-import { BooleanBadge } from "@/components/admin/StatusBadge";
+import { BooleanBadge } from "@/components/admin/Statusbadge";
 import { listUsers } from "@/lib/admin-api";
 import { AdminUser } from "@/types/admin";
 
