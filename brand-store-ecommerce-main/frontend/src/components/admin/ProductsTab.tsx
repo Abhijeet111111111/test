@@ -443,7 +443,7 @@ export default function ProductsTab() {
               <Label>Brand</Label>
               <Select
                 value={form.brand}
-                onValueChange={(v) => setForm((f) => ({ ...f, brand: v }))}
+                onValueChange={(v:any) => setForm((f) => ({ ...f, brand: v }))}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select brand" />
@@ -461,7 +461,7 @@ export default function ProductsTab() {
               <Label>Category</Label>
               <Select
                 value={form.category}
-                onValueChange={(v) => setForm((f) => ({ ...f, category: v }))}
+                onValueChange={(v:any) => setForm((f) => ({ ...f, category: v }))}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="Select category" />
