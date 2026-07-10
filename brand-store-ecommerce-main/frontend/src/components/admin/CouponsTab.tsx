@@ -23,7 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { BooleanBadge } from "@/components/admin/StatusBadge";
+import { BooleanBadge } from "@/components/admin/Statusbadge";
 import ConfirmDialog from "@/components/admin/ConfirmDialog";
 import {
   createCoupon,
