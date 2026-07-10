@@ -297,8 +297,8 @@ export default function CouponsTab() {
                 <Label>Discount type</Label>
                 <Select
                   value={form.discountType}
-                  onValueChange={(v: DiscountType) =>
-                    setForm((f) => ({ ...f, discountType: v }))
+                  onValueChange={(v) =>
+                    setForm((f:any) => ({ ...f, discountType: v }))
                   }
                 >
                   <SelectTrigger>
